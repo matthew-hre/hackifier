@@ -1,36 +1,36 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Hackifier
 
-## Getting Started
+### _A comprehensive Hackathon management tool_
 
-First, run the development server:
+## Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- Customizable front end, without needing to touch the code
+- Sign in with email, Google, Github, or Azure
+- Customizable participant application
+- Push notifications for announcements
+- QR code check in
+- Comprehensive ticketing system
+- Integrated calendar for events
+- Diverse permissions system
+- Admin console to manage everything from participants to judges
+- Integrated judging system
+- Mentor coordination system
+- Staged content release
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Running Hackifier yourself?
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+_Using Hackifier yourself? Sweet! Add your event to this [list](https://github.com/matthew_hre/hackifier/wiki/Hackifier-Users) to help support the development of this project._
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+Set up documentation is under development.
 
-## Learn More
+## Contributing
 
-To learn more about Next.js, take a look at the following resources:
+Hackifier is an open source project and we welcome contributions. Please read our [contributing guidelines](https://github.com/matthew_hre/hackifier/wiki/Contribution) for more information.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## License
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+Hackifier is licensed under the [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) license. This means you are free to share and adapt this software for non-commercial purposes, as long as you give appropriate credit, provide a link to the license, and indicate if changes were made. If you adapt this software, you must distribute your contributions under the same license as the original. Basically, just show me some love and we're good.
 
-## Deploy on Vercel
+## Hackifier Team
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- [Matthew Hrehirchuk](https://matthew-hre.com) - Creator of Hackifier. Sole Developer, Designer, Project Manager, and a Husk of a Human
