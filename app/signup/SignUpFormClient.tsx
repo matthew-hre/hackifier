@@ -109,18 +109,6 @@ export default function SignUpFormClient({
           </p>
         </div>
       </main>
-      <div className="absolute bottom-2 w-full text-center left-0">
-        <Separator />
-        <p className="text-sm text-muted-foreground pt-2">
-          An open source project by{" "}
-          <a
-            className="font-medium text-primary underline underline-offset-4 hover:no-underline"
-            href="https://matthew-hre.com"
-          >
-            Matthew Hrehirchuk
-          </a>
-        </p>
-      </div>
     </>
   );
 }

@@ -19,13 +19,13 @@
 
 ## Running Hackifier yourself?
 
-_Using Hackifier yourself? Sweet! Add your event to this [list](https://github.com/matthew_hre/hackifier/wiki/Hackifier-Users) to help support the development of this project._
+_Using Hackifier yourself? Sweet! Add your event to this [list](https://github.com/matthew-hre/hackifier/wiki/Hackifier-Users) to help support the development of this project._
 
 Set up documentation is under development.
 
 ## Contributing
 
-Hackifier is an open source project and we welcome contributions. Please read our [contributing guidelines](https://github.com/matthew_hre/hackifier/wiki/Contribution) for more information.
+Hackifier is an open source project and we welcome contributions. Please read our [contributing guidelines](https://github.com/matthew-hre/hackifier/wiki/Contribution) for more information.
 
 ## License
 
