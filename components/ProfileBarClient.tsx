@@ -12,18 +12,76 @@ import {
   DropdownMenuTrigger,
 } from "./ui/dropdown-menu";
 import { Tooltip, TooltipContent, TooltipTrigger } from "./ui/tooltip";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+
+import { User } from "@supabase/supabase-js";
+
+import { SignUp, LogIn } from "@/components/AuthForms";
+
+interface ProfileBarClientProps {
+  user: User | null;
+  QRCode: React.ReactNode;
+  logout: () => void;
+}
+
+export interface SignUpProps {
+  signUp: (formData: FormData) => void;
+  signInWithGithub: () => void;
+  searchParams?: { message: string };
+}
+
+export interface LogInProps {
+  searchParams?: { message: string };
+  signIn: (formData: FormData) => void;
+  signInWithGithub: () => void;
+}
 
 export default function ProfileBarClient({
   user,
   QRCode,
   logout,
-}: {
-  user: any;
-  QRCode: any;
-  logout: any;
-}) {
+  signUp,
+  signIn,
+  signInWithGithub,
+  searchParams,
+}: ProfileBarClientProps & SignUpProps & LogInProps) {
   return (
-    <nav className="bg-muted rounded-2xl h-[calc(100dvh-2rem)] flex flex-col items-center w-min px-2 py-4 m-4 z-10 min-w-[300px] sticky top-4 right-4">
+    <nav className="bg-muted rounded-2xl h-[calc(100dvh-2rem)] flex flex-col items-center w-min px-2 py-4 m-4 z-10 min-w-[380px] sticky top-4 right-4">
+      {user ? (
+        <UserProfile user={user} QRCode={QRCode} logout={logout} />
+      ) : (
+        <Tabs defaultValue="signup" className="w-[calc(100%-0.5rem)]">
+          <TabsList className="flex w-full bg-black/10">
+            <TabsTrigger value="signup" className="flex-1">
+              Sign Up
+            </TabsTrigger>
+            <TabsTrigger value="login" className="flex-1">
+              Log In
+            </TabsTrigger>
+          </TabsList>
+          <TabsContent value="signup">
+            <SignUp
+              signUp={signUp}
+              signInWithGithub={signInWithGithub}
+              searchParams={searchParams}
+            />
+          </TabsContent>
+          <TabsContent value="login">
+            <LogIn
+              searchParams={searchParams}
+              signIn={signIn}
+              signInWithGithub={signInWithGithub}
+            />
+          </TabsContent>
+        </Tabs>
+      )}
+    </nav>
+  );
+}
+
+function UserProfile({ user, QRCode, logout }: ProfileBarClientProps) {
+  return (
+    <>
       <div className="flex flex-row items-center justify-between w-full px-2">
         <Button
           variant="ghost"
@@ -73,7 +131,7 @@ export default function ProfileBarClient({
           </p>
         </div>
       </div>
-    </nav>
+    </>
   );
 }
 
