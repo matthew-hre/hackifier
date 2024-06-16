@@ -140,17 +140,6 @@ export function GradientPicker({
                 />
               ))}
             </div>
-
-            <GradientButton background={background}>
-              💡 Get more at{" "}
-              <Link
-                href="https://gradient.page/css/ui-gradients"
-                className="hover:underline font-bold"
-                target="_blank"
-              >
-                Gradient Page
-              </Link>
-            </GradientButton>
           </TabsContent>
 
           <TabsContent value="image" className="mt-0">
@@ -164,20 +153,7 @@ export function GradientPicker({
                 />
               ))}
             </div>
-
-            <GradientButton background={background}>
-              🎁 Get abstract{" "}
-              <Link
-                href="https://gradient.page/wallpapers"
-                className="hover:underline font-bold"
-                target="_blank"
-              >
-                wallpapers
-              </Link>
-            </GradientButton>
           </TabsContent>
-
-          <TabsContent value="password">Change your password here.</TabsContent>
         </Tabs>
 
         <Input

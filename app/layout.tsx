@@ -3,6 +3,7 @@ import { Inter, Gabarito } from "next/font/google";
 import "./globals.css";
 
 import { cn } from "@/lib/utils";
+import { TooltipProvider } from "@/components/ui/tooltip";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const gabarito = Gabarito({ subsets: ["latin"], variable: "--font-gabarito" });
@@ -26,7 +27,7 @@ export default async function RootLayout({
           gabarito.variable
         )}
       >
-        {children}
+        <TooltipProvider delayDuration={300}>{children}</TooltipProvider>
       </body>
     </html>
   );
