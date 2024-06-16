@@ -1,7 +1,7 @@
 "use client";
 
 import { QRCode as QRGen } from "react-qrcode-logo";
-import { Skeleton } from "./ui/skeleton";
+import { Skeleton } from "../ui/skeleton";
 
 export default function QRCodeClient({ value }: { value: string }) {
   return (

@@ -2,7 +2,7 @@
 
 import { Button } from "@/components/ui/button";
 import { BellIcon, LogOutIcon, SettingsIcon, UserIcon } from "lucide-react";
-import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
+import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -10,30 +10,23 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "./ui/dropdown-menu";
-import { Tooltip, TooltipContent, TooltipTrigger } from "./ui/tooltip";
+} from "../ui/dropdown-menu";
+import { Tooltip, TooltipContent, TooltipTrigger } from "../ui/tooltip";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 import { User } from "@supabase/supabase-js";
 
-import { SignUp, LogIn } from "@/components/AuthForms";
+import {
+  SignUp,
+  LogIn,
+  SignUpProps,
+  LogInProps,
+} from "@/components/auth/AuthForms";
 
 interface ProfileBarClientProps {
   user: User | null;
   QRCode: React.ReactNode;
   logout: () => void;
-}
-
-export interface SignUpProps {
-  signUp: (formData: FormData) => void;
-  signInWithGithub: () => void;
-  searchParams?: { message: string };
-}
-
-export interface LogInProps {
-  searchParams?: { message: string };
-  signIn: (formData: FormData) => void;
-  signInWithGithub: () => void;
 }
 
 export default function ProfileBarClient({

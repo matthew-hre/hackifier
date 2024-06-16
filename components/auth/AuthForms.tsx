@@ -1,13 +1,23 @@
 "use client";
 
 import { useState } from "react";
-import { Input } from "./ui/input";
-import { Button } from "./ui/button";
+import { Input } from "../ui/input";
+import { Button } from "../ui/button";
 import { AlertTriangleIcon } from "lucide-react";
 import { FiGithub } from "react-icons/fi";
 import { Loader2 } from "lucide-react";
 
-import { SignUpProps, LogInProps } from "@/components/ProfileBarClient";
+export interface SignUpProps {
+  signUp: (formData: FormData) => void;
+  signInWithGithub: () => void;
+  searchParams?: { message: string };
+}
+
+export interface LogInProps {
+  searchParams?: { message: string };
+  signIn: (formData: FormData) => void;
+  signInWithGithub: () => void;
+}
 
 export function SignUp({
   signUp,
@@ -33,8 +43,10 @@ export function SignUp({
 
   return (
     <>
-      <main className="flex flex-col items-center min-h-screen py-2 space-y-2 mt-16">
-        <h1 className="text-4xl font-bold tracking-tight">Hackifier</h1>
+      <main className="flex flex-col items-center py-2 space-y-2 mt-16">
+        <h1 className="text-6xl font-bold tracking-tight font-title">
+          Hackifier
+        </h1>
         <p className="text-md text-foreground pb-6 md:pb-12 text-center">
           No more meal tickets, no more paper schedules. Welcome to the 21st
           century.
@@ -115,12 +127,12 @@ export function LogIn({ searchParams, signIn, signInWithGithub }: LogInProps) {
 
   return (
     <>
-      <main className="flex flex-col items-center min-h-screen py-2 space-y-2 mt-16">
-        <h1 className="text-4xl font-bold tracking-tight">Hackifier</h1>
+      <main className="flex flex-col items-center py-2 space-y-2 mt-16">
+        <h1 className="text-6xl font-bold tracking-tight font-title">
+          Hackifier
+        </h1>
         <p className="text-md text-foreground pb-6 md:pb-12 text-center">
-          Welcome back, we missed you.
-          <br />
-          Let&apos;s get back to hacking.
+          Welcome back, we missed you. Let&apos;s get back to hacking.
         </p>
         <div className="grid gap-6 w-full max-w-sm pt-2">
           <form onSubmit={handleEmailSubmit} className="space-y-2">

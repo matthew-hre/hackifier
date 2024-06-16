@@ -6,9 +6,9 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 
-import NavBar from "@/components/NavBar";
-import ProfileBar from "@/components/ProfileBar";
-import ContentBox from "@/components/ContentBox";
+import NavBar from "@/components/layout/NavBar";
+import ProfileBar from "@/components/user/ProfileBar";
+import ContentBox from "@/components/layout/ContentBox";
 
 export default function Home() {
   return (
@@ -19,7 +19,7 @@ export default function Home() {
           <div className="container px-4 md:px-6">
             <div className="grid gap-6 lg:grid-cols-2 lg:gap-12">
               <div className="flex flex-col justify-center space-y-4">
-                <h1 className="text-4xl font-bold tracking-tighter text-white sm:text-5xl md:text-6xl lg:text-7xl">
+                <h1 className="text-5xl font-bold tracking-tighter text-white sm:text-6xl md:text-7xl lg:text-8xl font-title">
                   Hackifier V1.0.0
                 </h1>
                 <p className="text-lg text-gray-200 md:text-xl">
@@ -180,46 +180,6 @@ export default function Home() {
                   width="500"
                   height="500"
                   alt="Hackathon Schedule"
-                  className="max-w-full h-auto"
-                />
-              </div>
-            </div>
-          </div>
-        </ContentBox>
-        <ContentBox>
-          <div className="container px-4 md:px-6">
-            <div className="grid gap-6 lg:grid-cols-2 lg:gap-12">
-              <div className="flex flex-col justify-center space-y-4">
-                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
-                  Join the Hackathon
-                </h2>
-                <p className="text-gray-500 md:text-lg">
-                  Register now to secure your spot and start building your next
-                  big project.
-                </p>
-                <div className="flex flex-col gap-2 sm:flex-row">
-                  <Link
-                    href="#"
-                    className="inline-flex h-10 items-center justify-center rounded-md bg-[#6366f1] px-6 text-sm font-medium text-white shadow-sm transition-colors hover:bg-[#4f46e5] focus:outline-none focus:ring-2 focus:ring-[#6366f1] focus:ring-offset-2"
-                    prefetch={false}
-                  >
-                    Register Now
-                  </Link>
-                  <Link
-                    href="#"
-                    className="inline-flex h-10 items-center justify-center rounded-md border border-[#6366f1] bg-transparent px-6 text-sm font-medium text-[#6366f1] shadow-sm transition-colors hover:bg-[#6366f1] hover:text-white focus:outline-none focus:ring-2 focus:ring-[#6366f1] focus:ring-offset-2"
-                    prefetch={false}
-                  >
-                    Learn More
-                  </Link>
-                </div>
-              </div>
-              <div className="flex items-center justify-center">
-                <img
-                  src="/placeholder.svg"
-                  width="500"
-                  height="500"
-                  alt="Hackathon CTA"
                   className="max-w-full h-auto"
                 />
               </div>
