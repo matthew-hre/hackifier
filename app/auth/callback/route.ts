@@ -29,6 +29,28 @@ export async function GET(request: Request) {
     );
     const { error } = await supabase.auth.exchangeCodeForSession(code);
     if (!error) {
+      const user = await supabase.auth.getUser();
+
+      if (!user) {
+        return NextResponse.redirect(`${origin}/auth/auth-code-error`);
+      }
+
+      const userId = user?.data.user?.id;
+      const { data: userData, error: userError } = await supabase
+        .from("users")
+        .select()
+        .eq("user_id", userId)
+        .single();
+
+      if (userError) {
+        console.error(userError);
+        return;
+      }
+
+      if (!userData.first_name || !userData.last_name) {
+        return NextResponse.redirect(`${origin}/registration`);
+      }
+
       return NextResponse.redirect(`${origin}${next}`);
     }
   }

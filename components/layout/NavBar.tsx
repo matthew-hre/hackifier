@@ -13,5 +13,6 @@ const getUser = async () => {
 
 export default async function NavBar() {
   const user = await getUser();
+
   return <NavBarClient user={user} />;
 }

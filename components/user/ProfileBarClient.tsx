@@ -1,7 +1,14 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { BellIcon, LogOutIcon, SettingsIcon, UserIcon } from "lucide-react";
+import {
+  BellIcon,
+  LogOutIcon,
+  MoonIcon,
+  SettingsIcon,
+  SunIcon,
+  UserIcon,
+} from "lucide-react";
 import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
 import {
   DropdownMenu,
@@ -15,6 +22,8 @@ import { Tooltip, TooltipContent, TooltipTrigger } from "../ui/tooltip";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 import { User } from "@supabase/supabase-js";
+
+import { useTheme } from "next-themes";
 
 import {
   SignUp,
@@ -129,6 +138,8 @@ function UserProfile({ user, QRCode, logout }: ProfileBarClientProps) {
 }
 
 function ProfileOptions({ user, logout }: { user: any; logout: any }) {
+  const { theme, setTheme } = useTheme();
+
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
@@ -158,12 +169,26 @@ function ProfileOptions({ user, logout }: { user: any; logout: any }) {
         <DropdownMenuSeparator />
         <DropdownMenuItem>
           <UserIcon className="mr-2 h-4 w-4" />
-          View Profile
+          Manage Registration
         </DropdownMenuItem>
         <DropdownMenuItem>
           <SettingsIcon className="mr-2 h-4 w-4" />
           Account Settings
         </DropdownMenuItem>
+        <button
+          onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+          className="w-full"
+        >
+          <DropdownMenuItem>
+            {theme === "light" ? (
+              <SunIcon className="mr-2 h-4 w-4" />
+            ) : (
+              <MoonIcon className="mr-2 h-4 w-4" />
+            )}
+            Toggle Theme
+          </DropdownMenuItem>
+        </button>
+
         <DropdownMenuSeparator />
         <form action={logout}>
           <button type="submit" className="w-full">
